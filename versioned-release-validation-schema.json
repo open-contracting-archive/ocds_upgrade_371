@@ -1,0 +1,153 @@
+{
+  "definitions": {
+    "relatedProcess": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "title": {
+          "$ref": "#/definitions/StringNullVersioned"
+        },
+        "ocid": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "releaseDate": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "releaseID": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "releaseTag": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "relationship": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "releaseDate": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "releaseID": {
+                "type": "string"
+              },
+              "value": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                }
+              },
+              "releaseTag": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "uri": {
+          "$ref": "#/definitions/StringNullUriVersioned"
+        }
+      }
+    },
+    "relatedProcessUnversioned": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ocid": {
+          "type": "string"
+        },
+        "relationship": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "uri": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        }
+      }
+    },
+    "Tender": {
+      "properties": {
+        "relatedProcesses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/relatedProcess"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "Contract": {
+      "properties": {
+        "relatedProcesses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/relatedProcess"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "TenderUnversioned": {
+      "properties": {
+        "relatedProcesses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/relatedProcessUnversioned"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "ContractUnversioned": {
+      "properties": {
+        "relatedProcesses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/relatedProcessUnversioned"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
