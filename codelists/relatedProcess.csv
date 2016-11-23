@@ -1,0 +1,12 @@
+Category,Code,Title_en,Description_en,Source
+,preQualification,Pre-qualification process,"Procedure to identify, prior to solicitation, suppliers or contractors that are qualified",http://www.uncitral.org/uncitral/en/uncitral_texts/procurement_infrastructure/2011Model.html
+,preSelection,Pre-selection process,"Procedure to identify, prior to solicitation,  a limited number of suppliers or contractors that best meet the qualification criteria for the procurement concerned",http://www.uncitral.org/uncitral/en/uncitral_texts/procurement_infrastructure/2011Model.html
+,solicitation,Solicitation process,"Invitation to tender,  present submissions or participate in request-for-proposals proceedings or an electronic reverse auction",http://www.uncitral.org/uncitral/en/uncitral_texts/procurement_infrastructure/2011Model.html
+,frameworkFirstStage,Framework agreement procedure first stage,Procedure to select a supplier (or suppliers) or a contractor (or contractors) to be a party (or parties) to a framework agreement with a procuring entity,http://www.uncitral.org/uncitral/en/uncitral_texts/procurement_infrastructure/2011Model.html
+,frameworkSecondStage,Framework agreement procedure second stage,Procedure to award a procurement contract under the framework agreement to a supplier or contractor party to the framework agreement,http://www.uncitral.org/uncitral/en/uncitral_texts/procurement_infrastructure/2011Model.html
+,planning,Planning process,,
+,parent,Parent contract (for sub-contracts),,
+,subContract,Sub-contract,,
+,unsuccessfulProcess,Unsuccessful process,,
+,replacementProcess, Replacement process,,
+,renewalProcess, Renewal process,,
