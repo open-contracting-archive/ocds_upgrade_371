@@ -1,4 +1,13 @@
 {
+  "properties": {
+    "relatedProcesses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/relatedProcess"
+      },
+      "uniqueItems": true
+    }
+  },
   "definitions": {
     "relatedProcess": {
       "type": "object",
@@ -105,34 +114,12 @@
         }
       }
     },
-    "Tender": {
-      "properties": {
-        "relatedProcesses": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/relatedProcess"
-          },
-          "uniqueItems": true
-        }
-      }
-    },
     "Contract": {
       "properties": {
         "relatedProcesses": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/relatedProcess"
-          },
-          "uniqueItems": true
-        }
-      }
-    },
-    "TenderUnversioned": {
-      "properties": {
-        "relatedProcesses": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/relatedProcessUnversioned"
           },
           "uniqueItems": true
         }

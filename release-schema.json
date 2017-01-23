@@ -1,4 +1,19 @@
 {
+  "properties": {
+    "relatedProcesses": {
+      "title": "Related processes",
+      "description": "A list of related contracting processes in OCDS, for example planning processes.",
+      "type": "array",
+      "mergeStrategy": "arrayMergeById",
+      "mergeOptions": {
+        "idRef": "id"
+      },
+      "items": {
+        "$ref": "#/definitions/relatedProcess"
+      },
+      "uniqueItems": true
+    }
+  },
   "definitions": {
     "relatedProcess": {
       "type": "object",
@@ -49,23 +64,6 @@
           ],
           "format": "uri",
           "mergeStrategy": "ocdsVersion"
-        }
-      }
-    },
-    "Tender": {
-      "properties": {
-        "relatedProcesses": {
-          "title": "Related processes",
-          "description": "A list of related contracting processes in OCDS, for example planning or PQQ process.",
-          "type": "array",
-          "mergeStrategy": "arrayMergeById",
-          "mergeOptions": {
-            "idRef": "id"
-          },
-          "items": {
-            "$ref": "#/definitions/relatedProcess"
-          },
-          "uniqueItems": true
         }
       }
     },
