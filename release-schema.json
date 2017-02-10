@@ -2,31 +2,25 @@
   "properties": {
     "relatedProcesses": {
       "title": "Related processes",
-      "description": "A list of related contracting processes in OCDS, for example planning processes.",
+      "description": "If this process follows on from one or more prior process, represented under a separate open contracting identifier (ocid) then details of the related process can be provided here. This is commonly used to relate mini-competitions to their parent frameworks, full tenders to a pre-qualification phase, or individual tenders to a broad planning process.",
       "type": "array",
-      "mergeStrategy": "arrayMergeById",
-      "mergeOptions": {
-        "idRef": "id"
-      },
       "items": {
-        "$ref": "#/definitions/relatedProcess"
+        "$ref": "#/definitions/RelatedProcess"
       },
       "uniqueItems": true
     }
   },
   "definitions": {
-    "relatedProcess": {
+    "RelatedProcess": {
       "type": "object",
       "title": "Related Process",
       "description": "A link to a related contracting process in OCDS and the type of relationship.",
       "properties": {
         "id": {
-          "description": "A local identifier for this relationship, unique within this block. This field is used to keep track of revisions of a relationship through the compilation from release to record mechanism.",
+          "description": "A local identifier for this relationship, unique within this array.",
           "type": [
-            "string",
-            "integer"
-          ],
-          "mergeStrategy": "overwrite"
+            "string"
+          ]
         },
         "title": {
           "title": "Related process title",
@@ -34,14 +28,12 @@
           "type": [
             "string",
             "null"
-          ],
-          "mergeStrategy": "ocdsVersion"
+          ]
         },
         "ocid": {
           "title": "Related process OCID",
           "description": "The OCID of the related process.",
-          "type": "string",
-          "mergeStrategy": "ocdsVersion"
+          "type":["string","null"]
         },
         "relationship": {
           "title": "Relationship",
@@ -52,18 +44,16 @@
           ],
           "items": {
             "type": "string"
-          },
-          "mergeStrategy": "ocdsVersion"
+          }
         },
         "uri": {
           "title": "Related process URI",
-          "description": "A URI pointing to an OCDS record for the related process",
+          "description": "A URI pointing to an OCDS release or record for the related process. This should be a machine-readable release or record package containing the relevant ocid.",
           "type": [
             "string",
             "null"
           ],
-          "format": "uri",
-          "mergeStrategy": "ocdsVersion"
+          "format": "uri"
         }
       }
     },
@@ -71,14 +61,10 @@
       "properties": {
         "relatedProcesses": {
           "title": "Related processes",
-          "description": "A list of related contracting processes in OCDS, for example planning or PQQ process.",
+          "description": "If this process is followed by one or more contracting processes, represented under a separate open contracting identifier (ocid) then details of the related process can be provided here. This is commonly used to point to subcontracts, or to renewal and replacement processes for this contract.",
           "type": "array",
-          "mergeStrategy": "arrayMergeById",
-          "mergeOptions": {
-            "idRef": "id"
-          },
           "items": {
-            "$ref": "#/definitions/relatedProcess"
+            "$ref": "#/definitions/RelatedProcess"
           },
           "uniqueItems": true
         }
